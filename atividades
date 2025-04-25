@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Atividades</title>
+    <style>
+        .box {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+        }
+        .modificavel {
+            background-color: lightblue;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Atividade 1: Olá Mundo -->
+    <div class="box">
+        <h2>1. Olá Mundo</h2>
+        <script>
+            alert('Olá Mundo');
+        </script>
+    </div>
+
+    <!-- Atividade 2: Soma de inteiros -->
+    <div class="box">
+        <h2>2. Soma de Inteiros</h2>
+        <button onclick="somar()">Somar 5 + 3</button>
+        <p id="resultado-soma"></p>
+    </div>
+
+    <!-- Atividade 3: Alterar por ID -->
+    <div class="box">
+        <h2>3. Alterar por ID</h2>
+        <p id="texto-id">Este texto será modificado via ID</p>
+        <button onclick="mudarPorId()">Alterar Cor</button>
+    </div>
+
+    <!-- Atividade 4: Alterar por Name -->
+    <div class="box">
+        <h2>4. Alterar por Name</h2>
+        <input type="text" name="campo-name" value="Valor original">
+        <button onclick="mudarPorName()">Alterar Valor</button>
+    </div>
+
+    <!-- Atividade 5: Alterar por Class -->
+    <div class="box">
+        <h2>5. Alterar por Class</h2>
+        <p class="modificavel">Elemento 1 com a classe</p>
+        <p class="modificavel">Elemento 2 com a classe</p>
+        <button onclick="mudarPorClass()">Alterar Fundo</button>
+    </div>
+
+    <script>
+        // Atividade 2: Função de soma
+        function somar() {
+            const num1 = 5;
+            const num2 = 3;
+            document.getElementById('resultado-soma').innerHTML = 
+                `Resultado: ${num1 + num2}`;
+        }
+
+        // Atividade 3: Alterar por ID
+        function mudarPorId() {
+            const elemento = document.getElementById('texto-id');
+            elemento.style.color = 'red';
+            elemento.innerHTML = 'Texto modificado via ID!';
+        }
+
+        // Atividade 4: Alterar por Name
+        function mudarPorName() {
+            const elementos = document.getElementsByName('campo-name');
+            elementos[0].value = 'Novo valor modificado!';
+        }
+
+        // Atividade 5: Alterar por Class
+        function mudarPorClass() {
+            const elementos = document.getElementsByClassName('modificavel');
+            for (let elemento of elementos) {
+                elemento.style.backgroundColor = 'lightgreen';
+            }
+        }
+    </script>
+</body>
+</html>
